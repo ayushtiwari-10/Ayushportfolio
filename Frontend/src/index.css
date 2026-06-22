@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Static palette (used directly, doesn't flip with theme) */
+  --color-amber: #e8845c;
+  --color-amber-bright: #f0a07e;
+  --color-amber-deep: #c7693f;
+
+  /* Theme-aware tokens — these flip via [data-theme] below */
+  --color-bg: #15161a;
+  --color-bg-deep: #0f1013;
+  --color-surface: #2a2c32;
+  --color-surface-2: #34363d;
+  --color-text: #f7f5f0;
+  --color-text-dim: #c4c5ca;
+  --color-muted: #8b8d94;
+  --color-line: #ffffff14;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f7f5f0;
+  --color-bg-deep: #ece8e0;
+  --color-surface: #ffffff;
+  --color-surface-2: #f0ede5;
+  --color-text: #15161a;
+  --color-text-dim: #45474e;
+  --color-muted: #6b6d73;
+  --color-line: #00000014;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-amber);
+  color: var(--color-bg-deep);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-2);
+  border-radius: 6px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
