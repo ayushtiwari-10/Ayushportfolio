@@ -8,7 +8,7 @@ export const profile = {
   github: "https://github.com/ayushtiwari-10",
   codingSince: 2023,
   // Deployed Render backend URL — update this if your Render service name changes
-  contactApiUrl: "https://ayush-portfolio-backend.onrender.com",
+  contactApiUrl: "https://ayushportfolio-vkwn.onrender.com",
 };
 
 export const projects = [
@@ -110,10 +110,19 @@ export const services = [
   },
 ];
 
-export const testimonial = {
-  isPlaceholder: false,
-  quote:
-    "Ayush has worked very dedicatedly & has met my expectations completely. I trusted him with everything, not knowing much about the technical stuff & he has managed to achieve those results for me within my budget & has been very open to make changes as well. I'm grateful for his support & hoping to keep expanding with me, as we move forward.",
-  name: "Kavya Tiwari",
-  role: "Founder, The Coffee Comfort",
-};
+export const testimonials = [
+  {
+    quote:
+      "Ayush has worked very dedicatedly & has met my expectations completely. I trusted him with everything, not knowing much about the technical stuff & he has managed to achieve those results for me within my budget & has been very open to make changes as well. I'm grateful for his support & hoping to keep expanding with me, as we move forward.",
+    name: "Kavya Tiwari",
+    role: "Founder, The Coffee Comfort",
+    project: "The Coffee Comfort",
+  },
+  {
+    quote:
+      "A very good major project — the tech stack was well chosen and the implementation was clear and proper. Saksham demonstrated a strong understanding of full-stack development and real-world problem solving.",
+    name: "Ashok Verma",
+    role: "Head of CS Department , GGITS",
+    project: "Saksham",
+  },
+];

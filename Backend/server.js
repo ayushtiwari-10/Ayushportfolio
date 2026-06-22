@@ -4,7 +4,7 @@ import cors from "cors";
 const app = express();
 
 const allowedOrigins = [
-  "https://ayush-portfolio-frontend.vercel.app", // ← update to your actual Vercel URL after first deploy
+  "https://ayush10.vercel.app", // ← update to your actual Vercel URL after first deploy
   "http://localhost:5173",                         // Vite dev server
 ];
 
