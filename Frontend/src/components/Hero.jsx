@@ -109,7 +109,7 @@ export default function Hero() {
           style={{ borderTop: "1px solid var(--color-line)" }}
         >
           {[
-            { label: "live products shipped", value: "2" },
+            { label: "live products shipped", value: "3" },
             { label: "years building software", value: `${yearsCoding}+` },
             { label: "payment integrations done right", value: "2" },
           ].map((stat) => (
