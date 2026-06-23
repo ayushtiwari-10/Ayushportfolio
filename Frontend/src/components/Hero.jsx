@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { profile } from "../data/content";
+import { useMagnetic } from "../hooks/useMagnetic";
 
 const container = {
   hidden: {},
@@ -16,6 +17,8 @@ const item = {
 
 export default function Hero() {
   const yearsCoding = new Date().getFullYear() - profile.codingSince;
+  const magneticPrimary = useMagnetic(0.3);
+  const magneticSecondary = useMagnetic(0.3);
 
   const scrollTo = (href) => {
     const el = document.querySelector(href);
@@ -60,8 +63,11 @@ export default function Hero() {
           className="font-display text-[13vw] md:text-[7.5rem] leading-[0.95] tracking-tight font-medium"
           style={{ color: "var(--color-text)" }}
         >
-          {profile.displayName}
-          <span className="text-amber">.</span>
+          <span className="sr-only">Ayush Tiwari — Full Stack Developer in {profile.location}. </span>
+          <span aria-hidden="true">
+            {profile.displayName}
+            <span className="text-amber">.</span>
+          </span>
         </motion.h1>
 
         <motion.p
@@ -74,17 +80,23 @@ export default function Hero() {
 
         <motion.div variants={item} className="flex flex-wrap items-center gap-4 mt-10 md:mt-14">
           <button
+            ref={magneticPrimary.ref}
+            onMouseMove={magneticPrimary.onMouseMove}
+            onMouseLeave={magneticPrimary.onMouseLeave}
+            style={{ ...magneticPrimary.style, backgroundColor: "var(--color-amber)", color: "#15161a" }}
             onClick={() => scrollTo("#work")}
-            className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-medium text-sm transition-transform hover:-translate-y-0.5"
-            style={{ backgroundColor: "var(--color-amber)", color: "#15161a" }}
+            className="group items-center gap-2 px-6 py-3.5 rounded-full font-medium text-sm"
           >
             See the work
             <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
           <button
+            ref={magneticSecondary.ref}
+            onMouseMove={magneticSecondary.onMouseMove}
+            onMouseLeave={magneticSecondary.onMouseLeave}
+            style={{ ...magneticSecondary.style, border: "1px solid var(--color-line)", color: "var(--color-text)" }}
             onClick={() => scrollTo("#contact")}
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-medium text-sm transition-colors"
-            style={{ border: "1px solid var(--color-line)", color: "var(--color-text)" }}
+            className="items-center gap-2 px-6 py-3.5 rounded-full font-medium text-sm"
           >
             Let's talk
           </button>

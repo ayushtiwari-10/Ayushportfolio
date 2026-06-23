@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, Search } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { profile } from "../data/content";
 
@@ -65,6 +65,18 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => {
+              window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true }));
+            }}
+            aria-label="Open command palette"
+            className="hidden sm:flex items-center gap-1.5 px-3 h-9 rounded-full font-mono text-[11px] transition-colors hover:text-amber"
+            style={{ border: "1px solid var(--color-line)", color: "var(--color-muted)" }}
+          >
+            <Search size={13} />
+            <kbd>⌘K</kbd>
+          </button>
+
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"

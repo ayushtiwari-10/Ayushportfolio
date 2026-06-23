@@ -52,6 +52,18 @@ export const projects = [
   },
 ];
 
+export const otherWork = [
+  {
+    id: "kavya-landing",
+    name: "Kavya Tiwari — Link Page",
+    tagline: "A mobile-first landing page built to move Instagram traffic to YouTube",
+    description:
+      "A single-page static site designed specifically for Instagram bio clicks — built mobile-first since that's where nearly all of that traffic comes from, not as a general-purpose website.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    url: "https://kavya111.netlify.app/",
+  },
+];
+
 export const skills = [
   {
     category: "Frontend",

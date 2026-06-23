@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
-import { projects } from "../data/content";
+import { projects, otherWork } from "../data/content";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -38,6 +38,7 @@ function BrowserFrame({ project }) {
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
+        data-cursor="view"
         className="relative block overflow-hidden group"
         style={{ aspectRatio: "16/10" }}
       >
@@ -146,6 +147,50 @@ function ProjectCard({ project, index }) {
   );
 }
 
+function OtherWorkCard({ item }) {
+  const displayUrl = item.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  return (
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-xl transition-colors"
+      style={{ border: "1px solid var(--color-line)" }}
+    >
+      <div>
+        <div className="flex items-center gap-3 flex-wrap">
+          <h4 className="font-display text-xl" style={{ color: "var(--color-text)" }}>
+            {item.name}
+          </h4>
+          <span className="font-mono text-[10px] tracking-wider" style={{ color: "var(--color-muted)" }}>
+            {displayUrl}
+          </span>
+        </div>
+        <p className="text-sm mt-1.5 max-w-xl" style={{ color: "var(--color-muted)" }}>
+          {item.tagline}
+        </p>
+        <div className="flex flex-wrap gap-2 mt-3">
+          {item.stack.map((tech) => (
+            <span
+              key={tech}
+              className="font-mono text-[10px] px-2 py-0.5 rounded-full"
+              style={{ border: "1px solid var(--color-line)", color: "var(--color-muted)" }}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+      <span
+        className="inline-flex items-center gap-1.5 text-sm font-medium flex-shrink-0 group-hover:gap-2.5 transition-all"
+        style={{ color: "var(--color-amber)" }}
+      >
+        Visit <ArrowUpRight size={14} />
+      </span>
+    </a>
+  );
+}
+
 export default function Projects() {
   return (
     <section id="work" className="px-6 md:px-8 py-16 md:py-24">
@@ -170,6 +215,26 @@ export default function Projects() {
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
+
+        {otherWork.length > 0 && (
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            className="mt-4 pt-12"
+            style={{ borderTop: "1px solid var(--color-line)" }}
+          >
+            <span className="font-mono text-xs tracking-widest" style={{ color: "var(--color-muted)" }}>
+              OTHER WORK
+            </span>
+            <div className="mt-5 space-y-4">
+              {otherWork.map((item) => (
+                <OtherWorkCard key={item.id} item={item} />
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
