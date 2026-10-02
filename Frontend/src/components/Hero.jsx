@@ -63,7 +63,7 @@ export default function Hero() {
           className="font-display text-[13vw] md:text-[7.5rem] leading-[0.95] tracking-tight font-medium"
           style={{ color: "var(--color-text)" }}
         >
-          <span className="sr-only">Ayush Tiwari — Full Stack Developer in {profile.location}. </span>
+          <span className="sr-only">Ayush Tiwari — Full Stack Web Developer in {profile.location}. Websites and web applications built with HTML, CSS, JavaScript, React, Node.js and MongoDB. </span>
           <span aria-hidden="true">
             {profile.displayName}
             <span className="text-amber">.</span>
