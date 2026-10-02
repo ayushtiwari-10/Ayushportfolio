@@ -40,7 +40,7 @@ export default function About() {
               11 PM.
             </p>
             <p>
-              I don't build demos. The two projects on this page are live right now — handling
+              I don't build demos. The three projects on this page are live right now — handling
               real payments, real video content, and real people using them. That distinction
               matters to me more than almost anything else: a portfolio full of "in progress"
               projects tells a client nothing about whether you can actually finish.

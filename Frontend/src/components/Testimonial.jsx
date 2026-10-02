@@ -10,7 +10,7 @@ const fadeUp = {
 export default function Testimonial() {
   return (
     <section className="px-6 md:px-8 py-20 md:py-28" style={{ backgroundColor: "var(--color-bg-deep)" }}>
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -23,7 +23,7 @@ export default function Testimonial() {
           </span>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}

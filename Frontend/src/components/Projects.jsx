@@ -206,7 +206,7 @@ export default function Projects() {
             SELECTED WORK
           </span>
           <h2 className="font-display text-3xl md:text-5xl mt-3 leading-tight" style={{ color: "var(--color-text)" }}>
-            Two products. Both live. Both still running.
+            Three products. All live. All still running.
           </h2>
         </motion.div>
 

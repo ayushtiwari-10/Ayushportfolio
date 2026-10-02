@@ -13,6 +13,25 @@ export const profile = {
 
 export const projects = [
   {
+    id: "officers-saga",
+    name: "Officers Saga",
+    status: "LIVE",
+    tagline: "A learning platform for CDS, AFCAT & NDA aspirants",
+    description:
+      "Built end-to-end for Officers Saga, a defence-exam coaching brand that forges future officers. The platform lets aspirants enroll in CDS, AFCAT, and NDA batches, learn from structured lessons, attempt exam-pattern mock tests, and see exactly where they stand — while the team manages courses, tests, and students from a custom admin dashboard.",
+    highlights: [
+      "Mock test engine that imports question papers straight from PDFs, with OCR for scanned pages",
+      "Per-attempt performance analytics so every aspirant can see their strengths and weak spots",
+      "Razorpay checkout with automatic PDF invoices, plus Telegram batch access after enrollment",
+      "OTP email verification via Brevo and an admin dashboard to manage batches, lessons, and tests",
+    ],
+    stack: ["React", "Vite", "Node.js", "Express", "MongoDB", "Razorpay", "Cloudinary", "Tesseract.js", "Groq API", "JWT"],
+    role: "Full Stack Developer (solo, end-to-end)",
+    url: "https://www.officerssaga.com/",
+    previewImage: "/officers-saga-preview.png",
+    hero: false,
+  },
+  {
     id: "coffee-comfort",
     name: "The Coffee Comfort",
     status: "LIVE",
@@ -136,5 +155,12 @@ export const testimonials = [
     name: "Ashok Verma",
     role: "Head of CS Department , GGITS",
     project: "Saksham",
+  },
+  {
+    quote:
+      "Thank you for putting so much effort into our website and treating it as your own, giving your day and night just to deliver on time. Can't thank you enough. The website and overall flow are fantastic, and what makes it even better is your support every time. Thanks, and great job!",
+    name: "Officers Saga Team",
+    role: "Client, Officers Saga",
+    project: "Officers Saga",
   },
 ];

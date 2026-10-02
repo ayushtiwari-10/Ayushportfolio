@@ -5,9 +5,9 @@ import { useTheme } from "../context/ThemeContext";
 import { profile, projects } from "../data/content";
 
 const FUN_FACTS = [
-  "Both live projects on this site handle real Razorpay payments — not test mode.",
+  "All three live projects on this site handle real Razorpay payments — not test mode.",
   "This portfolio's contact form runs through a real backend on Render, sending mail via Brevo.",
-  "Ayush has been coding since 2023 and shipped two full production apps solo since then.",
+  "Ayush has been coding since 2023 and shipped three full production apps solo since then.",
   "The Coffee Comfort uses signed, short-lived tokens so video lessons can't be ripped or shared.",
   "Saksham combines geolocation, real-time sockets, and an AI-assisted learning path — all in one app.",
 ];
