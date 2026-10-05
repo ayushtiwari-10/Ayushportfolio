@@ -109,9 +109,9 @@ export default function Hero() {
           style={{ borderTop: "1px solid var(--color-line)" }}
         >
           {[
-            { label: "live products shipped", value: "3" },
+            { label: "live products shipped", value: "4" },
             { label: "years building software", value: `${yearsCoding}+` },
-            { label: "payment integrations done right", value: "2" },
+            { label: "payment integrations done right", value: "3" },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="font-display text-3xl md:text-4xl tabular" style={{ color: "var(--color-text)" }}>
