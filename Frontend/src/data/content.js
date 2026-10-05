@@ -11,6 +11,36 @@ export const profile = {
   contactApiUrl: "https://ayushportfolio-vkwn.onrender.com",
 };
 
+// Content for the "Meet the developer" modal in the About section.
+// Replace /public/developer.jpg with your real photo (same filename) and edit the text below.
+export const developer = {
+  photo: "/Developer.jpeg",
+  role: "Full Stack Developer",
+  intro:
+    "Hi, I'm Ayush. I got curious about web development in 2023 and have been building real, shipped products ever since. I like owning a project from the first database schema to the deployed frontend.",
+  // Optional per-entry `link` renders a button. Replace /public/mern-certificate.pdf with your real certificate
+  // (or set href to an external URL, e.g. your Apna College certificate link).
+  career: [
+    { year: "2020", title: "Completed Class 10th", detail: "Finished secondary school." },
+    {
+      year: "2022",
+      title: "Passed High School (PCM) & joined B.Tech CSE",
+      detail: "Completed high school in the PCM stream, then enrolled in the B.Tech Computer Science & Engineering program the same year.",
+    },
+    { year: "2023", title: "Started web development", detail: "Got interested in web development and began pursuing it seriously." },
+    {
+      year: "2024",
+      title: "MERN Stack course, Apna College",
+      detail: "Completed an independent MERN stack web development course from Apna College.",
+      link: { label: "View certificate", href: "/mern-certificate.pdf" },
+    },
+    { year: "2025", title: "SIH, minor & major projects", detail: "Started working on Smart India Hackathon projects, plus my minor and major projects." },
+    { year: "2026", title: "Real-life projects for businesses", detail: "Began building real-world projects that help businesses scale." },
+  ],
+  hobbies: ["Running", "Swimming", "Listening to music"],
+  interests: ["Bike riding", "Adventure", "Trekking"],
+};
+
 export const projects = [
   {
     id: "officers-saga",
@@ -29,7 +59,7 @@ export const projects = [
     role: "Full Stack Developer (solo, end-to-end)",
     url: "https://www.officerssaga.com/",
     previewImage: "/officers-saga-preview.png",
-    hero: false,
+    hero: true,
   },
   {
     id: "coffee-comfort",

@@ -1,5 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { profile } from "../data/content";
+import { useMagnetic } from "../hooks/useMagnetic";
+import MeetDeveloper from "./MeetDeveloper";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -7,8 +11,11 @@ const fadeUp = {
 };
 
 export default function About() {
+  const [open, setOpen] = useState(false);
+  const magnetic = useMagnetic(0.3);
+
   return (
-    <section className="px-6 md:px-8 py-24 md:py-32">
+    <section id="about" className="px-6 md:px-8 py-24 md:py-32">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 md:gap-20">
           <motion.div
@@ -55,9 +62,23 @@ export default function About() {
               If you have an idea and need someone to take it from a Figma file (or a napkin
               sketch) to something people can actually use — that's the work I want.
             </p>
+            <div className="pt-3">
+              <button
+                ref={magnetic.ref}
+                onMouseMove={magnetic.onMouseMove}
+                onMouseLeave={magnetic.onMouseLeave}
+                onClick={() => setOpen(true)}
+                style={{ ...magnetic.style, backgroundColor: "var(--color-amber)", color: "#15161a" }}
+                className="group items-center gap-2 px-6 py-3.5 rounded-full font-medium text-sm"
+              >
+                Meet the developer
+                <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
+            </div>
           </motion.div>
         </div>
       </div>
+      <MeetDeveloper open={open} onClose={() => setOpen(false)} />
     </section>
   );
 }
